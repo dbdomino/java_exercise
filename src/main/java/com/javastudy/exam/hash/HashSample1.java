@@ -56,7 +56,7 @@ class HashTable {
             data[index] = list;
         }
         Node node = searchKey(list, key); // 배열방에 키 있는지 노드들을 확인해서 해당 노드 가져옴
-        System.out.println(key + ", hashcode("+ hashcode+"), index(" + index + "), node("+node+")");// 해당 node 있으면 node의 객체 주소 출력
+        System.out.println(key + ", hashcode("+ hashcode+"), index(" + index + "), node("+node+")");// 로깅
         if (node == null) { // 노드 없으면 노드 생성해서 배열방에 추가
             list.addLast(new Node(key,value));// 배열의
         } else { // 노드 있으면 노드의 값을 대체해줌
@@ -92,6 +92,6 @@ public class HashSample1 {
         System.out.println(hashTable.get("FFF"));
         // 실제로 우리가 쓰는건 해시 테이블의 put과 get이지만,
         // 해시테이블: key 와 value 형식으로 값을 저장하고 불러오는데 해시 값으로 매핑시켜 key를 빠르게 찾을 수 있음
-        // 해시 :데이터를 고정된 길이의 데이터로 변환된 값,
+        // 해시 :데이터를 고정된 길이의 데이터로 변환된 값
     }
 }
