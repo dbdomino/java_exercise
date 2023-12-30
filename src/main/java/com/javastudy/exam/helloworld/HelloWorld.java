@@ -1,4 +1,4 @@
-package com.javastudy.exam.section01;
+package com.javastudy.exam.helloworld;
 
 public class HelloWorld {
     public static void main(String[] args) {
