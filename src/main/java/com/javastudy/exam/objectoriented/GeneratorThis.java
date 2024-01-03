@@ -22,6 +22,11 @@ class Car2 {
         this.door = door;
     }
 }
+
+// 참조변수 this
+// 인스턴스 자신을 가리키는 참조변수.
+// 인스턴스 메서드(생성자 포함)에서 사용가능
+// 지역변수(local v)와 인스턴스변수(instance v)를 구분할 때 사용, this가 붙은건 iv(인스턴스변수)
 public class GeneratorThis {
     public static void main(String[] args) {
 
