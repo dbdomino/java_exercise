@@ -21,12 +21,21 @@ class Car2 {
         this.gearType = gearType;
         this.door = door;
     }
+
+    Car2(String c,  int d) {
+        color = c; // this.color 인데, this 생략해도 사용가능
+        gearType = "기어2"; // this.gearType 즉 인스턴스변수인데, 같은 클래스 내에선 this 생략하고 사용가능
+        door = d; // this.door인데, this 생략됨
+    }
 }
 
 // 참조변수 this
-// 인스턴스 자신을 가리키는 참조변수.
+// 인스턴스 자신을 가리키는 참조변수, 인스턴스의 주소가 저장되어 있다.
 // 인스턴스 메서드(생성자 포함)에서 사용가능
 // 지역변수(local v)와 인스턴스변수(instance v)를 구분할 때 사용, this가 붙은건 iv(인스턴스변수)
+// this를 빼고 선언 가능하다, 모든 인스턴스메서드에 this를 생략하고 사용 가능
+/* 주의 this()  this(매개변수)  차이점을 알겠는가?
+* 같은 클래스의 다른 생성자를 호출할 때 사용*/
 public class GeneratorThis {
     public static void main(String[] args) {
 
