@@ -1,4 +1,4 @@
-package com.javastudy.exam.String;
+package com.javastudy.exam.string;
 
 public class StringDefault
 {
