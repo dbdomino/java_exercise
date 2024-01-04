@@ -1,6 +1,8 @@
 package com.javastudy.exam.inheritance;
 
 // 자바는 단일상속만을 허용한다, 2중상속해서 만들기 보단, 비중이 높은 클래스만 상속, 나머진 포함관계로 작성한다.
+// 기본적으로 class들 보면 부모가 없는 클래스들이 많은데, 이는 Object 클래스를 조상으로 둔다.
+// class Metal extends Object { } 원래 이런식인데, extends Object 는 생략해서 적기 가능
 class Metal {
     boolean power; // 전원상태(on/off)
     int channel;	// 채널
