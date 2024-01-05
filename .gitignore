@@ -111,6 +111,7 @@ local.properties
 out
 gen
 build
+build/
 
 # CMake
 cmake-build-*/
