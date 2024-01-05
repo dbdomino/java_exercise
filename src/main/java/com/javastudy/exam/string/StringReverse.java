@@ -3,7 +3,7 @@ package com.javastudy.exam.string;
 public class StringReverse {
     public static void main(String[] args) {
         // 문자열
-        String str = "가나다라마";
+        String str = "가나다라마바";
         // 문자열 reverse
         String reverse = "";
         // charAt : String으로 저장된 문자열 중에서 한 글자만 선택해서 char타입으로 변환해줌
