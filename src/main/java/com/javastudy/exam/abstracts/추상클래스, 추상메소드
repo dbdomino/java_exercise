@@ -1,0 +1,13 @@
+추상 클래스
+- 미완성 설계도, 미완성 메서드를 가진 클래스
+
+추상 메서드
+- 미완성 메서드, 구현부(몸통, {}) 가 없는 메서드
+추상 메서드는 제어자로 abstract 가 붙는다.
+
+추상화 (불명확) <----> 구체화 (명확)
+말을 애매하게 하면 피해갈 구멍이 생긴다.
+추상화된 코드는 구체화된 코드 보다 유연하다. 변경에 유리하다.
+GregorianCalendar cal = new GregorianCalendar(); // 구체적
+Calendar cal = Calendar.getInstance(); // 추상적, 캘린더 객체를 반환, Calendar 객체는 추상클래스
+
