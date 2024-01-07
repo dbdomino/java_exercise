@@ -1,0 +1,12 @@
+JDBC
+java Application    -----데이터요청 ----> DB
+java Application    <----data전송  ----- DB
+
+데이터베이스가 오라클db, mysql, postgre db, mssql 같이 무슨 db를 쓴다해도, jdbc설정만 바꾸면 쉽게 다른 db로 연결 설정 가능
+인터페이스의 기능을 활용한 기능으로, 표준화가 가능하다.
+
+java Appl ----> JDBC ------> mysql
+                     ------> mssql
+                     ------> oracledb
+
+이처럼 JDBC 설정만 바꿔, 다른 db에 붙는게 가능하다. JDBC가 표준이 되는것이다. JDBC 표준으로 각자 다른 회사의 DB들과 연결이 모두 가능해지는 것.

@@ -12,16 +12,25 @@ class 클래스이름 implements 인터페이스이름 {
 //public class InterfaceCreateObject implements InterfaceSample01{
 //
 //}
-public class InterfaceCreateObject implements InterfaceSample01 {
+class Sample01 implements InterfaceSample01 {
 
     // Movable 인터페이스를 상속받은 InterfaceSample01 인터페이스를 implements 해온 거라 구현 해줘야 함.
-//    @Override
+//    @Override // @Override 생략하고 사용 가능
     public void move(int x, int y) {
-
+        System.out.println("Sample01, x:"+x+", y:"+y);
     }
     // Attackable 인터페이스를 상속받은 InterfaceSample01 인터페이스를 implements 해온 거라 구현 해줘야 함.
     @Override
     public void attack(Unit t) {
 
     }
+
+}
+
+public class InterfaceCreateObject  {
+    public static void main(String[] args) {
+        Sample01 s1 = new Sample01();
+        s1.move(101, 202);
+    }
+
 }
