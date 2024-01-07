@@ -1,0 +1,31 @@
+메서드 오버로딩(method overloading)
+
+“하나의 클래스에 같은 이름의 메서드를 여러 개 정의하는 것을 메서드 오버로딩, 간단히 오버로딩이라고 한다.”
+* overload - vt. 과적하다. 부담을 많이 지우다.
+오버로딩의 조건
+- 메서드의 이름이 같아야 한다.
+- 매개변수의 개수 또는 타입이 달라야 한다.
+- 매개변수는 같고 리턴타입이 다른 경우는 오버로딩이 성립되지 않는다.
+  (리턴타입은 오버로딩을 구현하는데 아무런 영향을 주지 못한다.)
+
+오버로딩의 예(1/3)
+▶ System.out.println메서드
+- 다양하게 오버로딩된 메서드를 제공함으로써 모든 변수를 출력할 수 있도록 설계
+void println()
+void println(boolean x)
+void println(char x)
+void println(char[] x)
+void println(double x)
+void println(float x)
+void println(int x)
+void println(long x)
+void println(Object x)
+void println(String x)
+
+오버로딩 주의
+매개변수의 이름이 다른 것은 오버로딩이 아니다. (매개변수 형식이 중요함)
+리턴타입은 오버로딩의 성립조건이 아니다.  ( 리턴타입이 다르고 매개변수 형식같으면 에러남)
+
+▶ 오버로딩의 올바른 예 – 매개변수는 다르지만 같은 의미의 기능수행
+int add (int x, int y) { return x+y; }
+long add (long x, long y) { return x+y; }
