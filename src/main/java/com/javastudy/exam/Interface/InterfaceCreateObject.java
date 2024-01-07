@@ -31,6 +31,9 @@ public class InterfaceCreateObject  {
     public static void main(String[] args) {
         Sample01 s1 = new Sample01();
         s1.move(101, 202);
+//        s1.dance(); // 에러, 인터페이스에 구현된 static 메서드는 객체로 선언시키지 않는다.
+        InterfaceSample01.dance(); // 인터페이스명으로 직접 static 호출가능, java 1.8부터 가능
+
     }
 
 }
