@@ -2,7 +2,7 @@
 
 프로그램 오류 3종
 - 컴파일 에러(compile-time error): 컴파일 할 때 발생하는 에러, 컴파일러가
-- 런타임 에러(runtime error): 실행할 때 발생하는 에러
+- 런타임 에러(runtime error): 실행할 때 발생하는 에러,
 - 논리적 에러(logical error): 컴파일에러, 런타임에러 에서도 걸리지 않았으나, 의도와 다르게 동작하는 것
 
 java의 런타임 에러
@@ -13,3 +13,12 @@ java의 런타임 에러
 예외처리의 정의와 목적
  -> 정의  프로그램 실행 시 발생할 수 있는 예외의 발생에 대비해서 코드를 작성하는것
  -> 목적  프로그램의 비정상 종료를 막고, 정상적인 실행상태를 유지하는 것
+
+ Exception 클래스들 : 사용자의 실수와 같은 외적인 요인에 의해 발생하는 예외
+            (IOException, ClassNotFoundException)
+ RuntimeException 클래스들 : 프로그래머의 실수로 발생하는 예외
+            (ArithmeticException 산술계산 예외, 0으로나누기
+            ClassCassException 형변환 실패
+            NullPointerException 참조변수가 가리키는게 null일때
+            IndexOutOfBoundsException 배열 범위 벗어남
+            등등)
