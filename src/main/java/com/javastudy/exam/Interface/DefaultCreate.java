@@ -26,6 +26,32 @@ class DefaultObject3 extends MotherDefualt implements DefaultMethod, DefaultMeth
     public void abstractMethodE() {   }
     public void abstractMethodF() {   }
 }
+
+class DefaultObject4 implements DefaultMethod, DefaultMethod3  {
+    public void abstractMethodA() {   }
+    public void abstractMethodB() {   }
+    public void abstractMethodC() {   }
+
+    @Override
+    public int defaultMethodA() {
+        return DefaultMethod.super.defaultMethodA();
+    }
+
+    @Override
+    public void abstractMethodD() {
+
+    }
+
+    @Override
+    public void abstractMethodE() {
+
+    }
+
+    @Override
+    public void abstractMethodF() {
+
+    }
+}
 class MotherDefualt {
     public int defaultMethodA(){
         System.out.println( " MotherDefualt defaultMethodA ");
