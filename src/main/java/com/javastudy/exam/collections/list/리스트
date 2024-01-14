@@ -1,0 +1,70 @@
+리스트 (순서가 있는 데이터 집합, ArrayList, LinkedList, Stack, Vector 등)
+- 순서를 보장한다
+- 값의 중복을 허용한다.
+
+Vector          ArrayList와 달리 자체적으로 동기화 처리가 되어있음
+                중요, 모든 종류의 객체 저장 가능  Object[]식으로 배열로 저장됨
+ArrayList 핵심   Vector를 개선한 것으로 구현원리와 기능적으로 동일
+                중요, 모든 종류의 객체 저장 가능  Object[]식으로 배열로 저장됨
+                처음에 ArrayList만들때 길이를 적절히 지정해주는게 중요함.(성능이슈)
+                ArrayList()
+                ArrayList(Collection c)
+                ArrayList(int initialCapacity) // 크기 지정
+
+                추가
+                boolean add(Object O)
+                void add(int index, Object element)  특정위치에 추가 가능
+                boolean addAll(Collection c) ArrayList나 set 같은거 추가가능
+                boolean addAll(int index, Collection c) 특정위치에 집합 추가 가능
+
+                삭제
+                boolean remove(Object o)
+                Object remove(int index)
+                boolean removeAll(Collection c)
+                void clear()
+
+                검색
+                int indexOf(Object o ) 인덱스 위치 찾음
+                int lastIndexOf(Object o) 중복일경우 마지막 위치
+                boolean contains(Object o) 객체가 존재하는지 검증
+                Object get(int index) 객체 읽기
+                Object set(int index, Object element)  해당위치에 객체 변경
+                List subList(int fromIndex, inttoIndex)   from~to 위치간 새로운 List를 만듬
+                Object[] toArray()   ArrayList의 객체 배열 반환
+                Object[] toArray(Object[] a)
+                boolean isEmpty()   ArrayList 비었는지확인
+                void trimToSize()   ArrayList 비어있는 공간 제거
+                int size()          저장된 객체 개수 반환
+
+ArrayList 기본 생성자를 통해 사용 하고 있을 경우를 생각 해보면 element 배열 크기가 0 이기 때문에
+첫 element 를 add 할때 배열의 resize 가 발생하고 배열 크기는 10 으로 설정 된다.
+이후 ArrayList 에 10개의 데이터가 있고 데이터를 추가 하려고 하면 resize 가 발생하여 15 가 된다.
+이렇게 임의의 capacity 를 설정하지 않는 일반적인 상황에서는 10 -> 15 -> 22 -> 33 -> 49 .... 로 배열 사이즈가 조정 된다.
+
+element 배열의 capacity 가 조정 된 후 add() 하려는 element 가 배열에 추가 되고, ArrayList 의 size 가 1 증가 한다.
+
+결론적으로 element를 add하려고 할 때, capacity가 elementData(배열)의 길이와 같아지면
+일반적인 상황에서기존의 용량 + 기존 용량/2만큼 크기가 늘어난 배열에 기존 elementData를 copy한다.
+
+이런 원리로 arrayList가 동적으로 크기가 늘어날 수 있는 것이다.
+
+LinkedList 핵심
+                데이터를 배열로 저장하는게 아니라 각각 Node라는 Object를 생성해서 거기에 저장시킨다.
+                - 배열의 단점인 크기를 변경할 수 없고, ArrayList에서 동적으로 크기변경하는 방식을 개선한 List
+                - 이를 통해 비순차적인 데이터의 추가, 삭제에 시간이 많이 걸리는 부분을 node 의 다음위치만 바꿔줌으로써 개선
+                - 즉, 배여로가 달리 불연속적으로 존재하는 데이터를 각각 연결함.
+
+                데이터의 삭제, 단 한번의 참조변경만으로 가능하다.
+                데이터의 추가, 한번의 Node객체 생성과 두번의 참조 변경으로 가능하다.
+
+void add(int index, Object element)         지정된 위치(index)에 객체(element) 또는 컬렉션에 포함된 객체들을 추가한다.
+boolean addAll(int index, Collection c)
+Object get(int index)                       지정된 위치(index)에 있는 객체를 반환한다.
+int indexOf(Object o)                       지정된 객체의 위치(index)를 반환한다. (List의 첫 번째 요소부터 순방향으로 찾는다.)
+int lastIndexOf(Object o)                   지정된 객체의 위치(index)를 반환한다. (List의 마지막 요소부터 역방향으로 찾는다.)
+ListIterator listIterator()                 List의 객체에 접근할 수 있는 ListIterator를 반환한다.
+ListIterator listIterator (int index)
+Object remove (int index)                   지정된 위치(index)에 있는 객체를 삭제하고 삭제된 객체를 반 환한다.
+Object set(int index, Object element)       지정된 위치(index)에 객체(element)를 저장한다
+void sort(Comparator c)                     지정된 비교자 (comparator)로 List를 정렬한다.
+List subList (int fromIndex, int tolndex)   지정된 범위(fromIndex부터 toIndex)에 있는 객체를 반환한다.
