@@ -1,0 +1,21 @@
+Iterator, ListIterator, Enumeration
+컬렉션에 저장된 데이터를 접근하는데 사용되는 인터페이스
+Enumeration 은 Iterator의 구버전
+ListIterator는 Iterator의 접근성을 향상시킨 것(단방향 -> 양방향), next, preserve
+// 다만 Map은 iterator()는 없음.
+
+Iterator 핵심, 읽어올게
+boolean hasNext()           읽어 올 게 있는지 확인한다. 있으면 true, 없으면 false를 반환한다.
+Object next()               다음 요소를 읽어 온다. next()를 호출하기 전에 hasNext()를 호출해서
+                            읽어올 요소가 있는지 확인하는 것이 안전하다. 없으면 에러나며 (unchecked error) try catch로 잡아야함.
+
+
+
+
+
+잘안쓰지만 있는거
+void remove()               next()로 읽어 온 요소를 삭제한다. next()를 호출한 다음에 remove()를 호 출해야한다. (선택적 기능)
+void forEachRemaining (Consumer<? super E) action)  컬렉션에 남아있는 요소들에 대해 지정된 작업 (action)을 수행한다.
+                                                    람다식 을 사용하는 디폴트 메서드.(JDK1.8부터 추가)
+
+// 다만 Map은 iterator()는 없음.
