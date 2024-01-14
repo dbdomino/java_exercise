@@ -1,0 +1,28 @@
+Map  인터페이스다.
+
+    Hashtable
+
+
+    HashMap (맵은 key 순서보장X)
+        LinkedHashMap(key 순서보장 O)
+
+
+    SortedMap
+        TreeMap
+
+void clear()                            Map의 모든 객체를 삭제한다.
+boolean containsKey(Object key)         검색, 지정된 key객체와 일치하는 Map의 key 객체가 있는지 확인한다.
+boolean containsValue (Object value)    검색, 지정된 value 객체와 일치하는 Map의 value 객체가 있는지 확인한다.
+Set entrySet()                          Map에 저장되어 있는 key-value쌍을 Map.Entry 타입의 객체로 저장한 Set으로 반환한다.
+boolean equals(Object o)                동일한 Map인지 비교한다.
+
+Object get(Object key)                  지정한 key객체에 대응하는 value 객체를 찾아서 반환한다.
+int hashCode()                          해시코드를 반환한다.
+boolean isEmpty()                       Map이 비어있는지 확인한다.
+Set keySet()                            Map에 저장된 모든 key객체를 Set으로 반환한다.(value는 안감)
+
+Object put(Object key. Object value)    Map에 value객체를 key 객체에 연결(mapping)하여 저장한다.
+void putAll (Map t)                     지정된 Map의 모든 key-value쌍을 추가한다.
+Object remove(Object key) int size()    지정한 key객체와 일치하는 key-value객체를 삭제한다.
+int size()                              Map에 저장된 key-value쌍의 개수를 반환한다.
+Collection values()                     Map에 저장된 모든 value 객체를 반환한다.(순서가 보장되든 안되든, 중복이 있든없든 상관없다. Collection 타입이니까)
