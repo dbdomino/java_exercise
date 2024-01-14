@@ -1,0 +1,15 @@
+stack 스택
+스택을 구현하는건 배열이 유리하다. 나중에 들어온게 먼저나가다보니 length 인덱스의 값을 빼고 null로바꿔버리면 되니
+활용예시 - 수식계산 (괄호안의거먼저), 문서작업 뒤로가기 ctrl+z, ctrl+y, 웹브라우저의 뒤로/앞으로
+
+
+push pop
+
+boolean empty()     스택이 비었는지 알려준다.
+Object push(Object o)   Stack에 객체(o)를 저장한다.
+
+Object pop()        Stack의 맨 위에 저장된 객체를 꺼낸다. (비었을 때는 EmptyStackException 발생)
+Object peek()       Stack의 맨 위에 저장된 객체를 반환, pop()과 달리 Stack에서 객체를 꺼내지는 않음.
+                    (비었을 때는 EmptyStackException발생)
+
+int search(Object o)    Stack에 주어진 객체(o)를 찾아서 그 위치를 반환한다. 못찾으면 -1을 반환(배열과 달리 위치는 1부터 시작하며, 가장먼저 빠질수 있는 위치가 1)
