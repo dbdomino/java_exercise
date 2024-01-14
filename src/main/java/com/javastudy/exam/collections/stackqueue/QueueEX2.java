@@ -47,7 +47,7 @@ public class QueueEX2 {
 //                    for(int i = 0; i<list.size(); i++) { // 반복하는데 list.size() 계속 호출하는 것 보다,
                     final int Size = tmp.size();  // 이런식으로 한번 호출해서 아래 for에 적어주는게 더 효율저기다.
                     for(i = 0; i<Size; i++) {
-                        System.out.println((i+1)+"."+it.next());
+                        System.out.println((i+1)+"."+it.next()); // Iterator의 기능, ListIterator()의 next()로 list의 다음값 불러오기가 편해짐.
                     }
 
                 } else {
