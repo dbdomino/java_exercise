@@ -1,0 +1,14 @@
+큐 queue (FIFO 선입선출)
+큐를 구현하는건 LinkedList로 구현하는게 유리하다. 선입선출 때문
+큐의 활용 - 최근 사용문서, 인쇄 대기목록, 버퍼(구현할때 큐로씀)
+
+add poll
+offer poll
+
+boolean add(Object o )  Queue에 객체를 저장. 성공하면 true반환, 저장공간 부족하면 IllegalStateException 발생
+boolean offer(Object o) Queue에 객체를 저장. 성공하면 true, 실패하면 false 반환
+
+Object poll()           Queue에 객체를 꺼내 반환, 비어있으면 null 반환
+Object remove()         Queue에 객체를 꺼내 반환, 비어있으면 NoSuchElementException발생
+Object peek()           삭제 없이 요소를 읽어온다. Queue가 비어있으면 null 반환
+Object element()        삭제 없이 요소를 읽어온다. peek와 달리 Queue가 비었을 때 NoSuchElementException 발생

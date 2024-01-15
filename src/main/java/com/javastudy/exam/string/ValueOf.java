@@ -6,6 +6,10 @@ public class ValueOf {
         int i = 100;
         String str1 = i + "";
         String str2 = String.valueOf(i);  // 이게 str1보다 더 빠르다.
+        String str3 = Integer.toString(i);  // 이게 str1보다 더 빠르다.
+        System.out.println(str1);
+        System.out.println(str2);
+        System.out.println(str3);
         // 문자열을 기본형으로 바꾸기
         /*
         String b = String.valueOf(true);   ->   boolean Boolean.parseBoolean(String s)
