@@ -17,7 +17,7 @@ class SampleA {
     }
 }
 
-public class ToStringTest {
+public class NullTest {
     public static void main(String[] args) {
         boolean b = false;
         int a = 15;
