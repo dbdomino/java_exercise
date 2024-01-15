@@ -1,0 +1,14 @@
+기본적으로 String, Integer, Float, Double 같은 것들은
+Comparable 을 구현하도록 인터페이스 연결이 되어있다.
+
+이는 compareTo Method가 String, Integer, Float, Double에 구현되어 있다는 소리며,
+String Integer Float Double 클래스에 들어가보면 compareTo 메소드를 확인할 수 있다.
+
+Integer 기준
+public int compareTo(Integer anotherInteger) {
+    int thisVal = this.value;
+    int anotherVal = anotherInteger.value;
+
+    // anotherInteger 값이 크면 -1 오름차순, 같으면 0, 작으면 -1 내림차순반환
+    return (thisVal < a ? -1 : (thisVal == anotherVal ? 0 : 1) ); // 3항연산자가 성능 조금더 나아서 사용한다고 함.
+}

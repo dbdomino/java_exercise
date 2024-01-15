@@ -1,0 +1,21 @@
+Comparator
+인터페이스다. Comparator 의 역할로
+구현체들의 구현된 메소드에선 정렬 기준을 return시켜 어떻게 정렬할지 적용시키도록 해준다.
+
+Arrays.sort(arr, new DescInt());
+여기서 Arrays.sort를 열어보면 배열을 a로 받고, 를 c로 받는다.
+public static <T> void sort(T[] a, Comparator<? super T> c) {
+        if (c == null) {
+            sort(a);
+        } else {
+            if (LegacyMergeSort.userRequested)
+                legacyMergeSort(a, c);
+            else
+                TimSort.sort(a, 0, a.length, c, null, 0, 0);
+        }
+    }
+
+Comparator 안에 있는 정렬메소드인 compare(T o1, T o2)를 override 하여 구현하는게 핵심.
+    compare(T o1, T o2)를 override하는데
+    o1과 o2를 Comparable 로 형변환 가능한 인스턴스로 받아와
+    형변환 후 compareTo 메소드를 이용해 조건을 정해서 return 시키는게 가능하다.

@@ -1,4 +1,4 @@
-##Comparator와Comparable
+## Comparator와Comparable
 
 - 객체 정렬에 필요한 메서드(정렬기준 제공)를 정의한 인터페이스
 - Comparable 기본 정렬기준을 구현하는데 사용.
@@ -23,5 +23,6 @@ public int compareTo(Integer anotherInt) {
     // 같으면 0, 오른쪽게 크면 -1, 왼쪽이 크면 +1
     // 즉 오름차순 -> v1 - v2  -> v2 오른쪽이 크면 음수, 오름차순 -> 오른쪽이 크도록   
     // 즉 내림차순 -> v1 - v2  -> v2 왼쪽이 크면 양수,  내림차순-> 왼쪽이 크도록 -> 오른쪽값이 크면 자리바꿔야함
+
     return (v1 < v2 ? -1 :(v1 == v2 ? 0 : 1) ); 
 }
