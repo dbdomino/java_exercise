@@ -1,0 +1,25 @@
+주요 메소드
+
+HashSet()
+HashSet(Collection c)
+HashSet(int initialCapacity)  초기용량설정
+HashSet(int initialCapacity, float loadFactor)   loadFactor, 0.8 -> 80%  언제쯤 용량늘릴건지
+
+추가
+boolean add(Object o)
+boolean addAll(Collection c)
+boolean remove(Object o)
+boolean removeAll(Collection c)
+boolean retainAll(Collection c)
+void clear()
+
+boolean contains(Object o) 객체 포함인지 확인
+boolean containsAll(Collection c)  여러개 객체 포함인지 확인
+iterator iteraror()
+
+확인
+boolean isEmpty()
+int size()
+Object[] toArray()    set에 저장된 객체를 객체배열로 반환
+Object[] toArray(Object[] a])
+
