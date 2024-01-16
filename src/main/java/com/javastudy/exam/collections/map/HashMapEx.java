@@ -7,10 +7,14 @@ import java.util.Map;
 public class HashMapEx {
     public static void main(String[] args) {
         Map<String, String> map = new HashMap<String, String>();
+        HashMap mn = new HashMap<>();
         HashMap m = new HashMap<>();
         m.put("myId", "1234");
         m.put("asdf", "1111");
         m.put("asdf", "1234");
+        System.out.println(m.get("asdf"));
+        System.out.println(m.toString());
+        System.out.println(mn.toString());
         map.put("키1", "값1");map.put("키2", "값2");map.put("키3", "값3");map.put("키4", "값4");map.put("키5", "값5");map.put("키6", "값6");
 
         if(m.containsKey("myId")) {  //containsKey(key) key 존재하는지 찾기 지원
