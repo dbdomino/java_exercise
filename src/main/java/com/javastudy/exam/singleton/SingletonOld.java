@@ -1,6 +1,7 @@
 package com.javastudy.exam.singleton;
 
 public class SingletonOld {
+    //gg
     private static SingletonOld uniqueInstance; // 싱글톤 클래스의 하나뿐인 인스턴스를 저장하는 정적 변수
     // 기타 인스턴스 변수
     private SingletonOld() {} // 생성자를 private로 선언했으므로, singleton에서만 클래스의 인스턴스를 만들 수 있습니다.
