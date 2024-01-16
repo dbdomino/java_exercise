@@ -2,12 +2,15 @@ package com.javastudy.exam.collections.set;
 
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedHashSet;
 
 // 합집합, 교집합, 차집합
 public class HashSetSample2 {
     public static void main(String args[]) {
         HashSet setA   = new HashSet();
         HashSet setB   = new HashSet();
+//        HashSet setC   = new HashSet();
+        LinkedHashSet setC   = new LinkedHashSet(); // 순서 보장하는 hashset, 성능 낮음
         HashSet setHab = new HashSet();
         HashSet setKyo = new HashSet();
         HashSet setCha = new HashSet();
@@ -17,6 +20,11 @@ public class HashSetSample2 {
 
         setB.add("4");	 setB.add("5");  setB.add("6"); setB.add("7");  setB.add("8");
         System.out.println("B = "+setB);
+
+        setC.add(setA);
+        setC.addAll(setB);
+        setC.addAll(setA);
+        System.out.println("C = "+setC);
 
         // 교집합 A ∩ B =
         Iterator it = setB.iterator();
