@@ -1,0 +1,3 @@
+HashMap, HashTable
+
+HashTable이란? HashMap과 구조가 비슷하지만 용도는 다릅니다. HashTable은 키와 값을 1:1형태로 가져가며 HashTable에 저장이 됩니다.
