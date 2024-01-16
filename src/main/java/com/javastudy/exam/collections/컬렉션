@@ -1,6 +1,21 @@
 컬렉션(collection)
 - 여러 객체(데이터)를 모아 놓은 것을 의미
 
+요약
+ArrayList       배열기반, 데이터의 추가와 삭제에 불리, 순차적인 추가삭제는 제일 빠름, 임의의 요소에 대한 접근성이 뛰어남 (중복o 순서o)
+LinkedList      연결기반, 데이터의 추가와 삭제에 유리, 임의 요소에 대한 접근이 비효율 (중복 o 순서 o)
+HashMap         배열과 배열이 결합된 형태, 추가, 삭제, 검색, 접근성이 모두 뛰어남, 검색에는 최고 성능을 보인다.
+TreeMap         연결기반, 정렬과 검색(범위검색)에 적합, 검색 성능은 HashMap보다 떨어짐.
+Stack           Vector를 상속받아 구현
+Queue           LinkedList가 Queue 인터페이스를 구현
+Properties      HashTable을 상속받아 구현  (파일 읽기와 쓰기 용이, 외부 프로퍼티 읽을때도 활용, )
+HashSet         HashMap을 이용해서 구현
+TreeSet         TreeMap을 이용해서 구현
+LinkedHahsMap   저장순서 추가된 HashMap과 HashSet
+LinkedHahsSet
+
+
+
 프레임웍(framework)
 - 표준화, 정형화된 체계적인 프로그래밍 방식
 - 라이브러리를 제공하여 라이브러리를 활용해 개발하도록 하는 방식
