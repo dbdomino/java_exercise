@@ -1,6 +1,7 @@
 Comparator
 인터페이스다. Comparator 의 역할로
 구현체들의 구현된 메소드에선 정렬 기준을 return시켜 어떻게 정렬할지 적용시키도록 해준다.
+핵심, 기본 정렬기준 외의 다른 기준으로 정렬하고자 할 때 사용
 
 Arrays.sort(arr, new DescInt());
 여기서 Arrays.sort를 열어보면 배열을 a로 받고, 를 c로 받는다.

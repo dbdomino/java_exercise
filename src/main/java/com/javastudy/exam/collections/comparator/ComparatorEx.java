@@ -8,6 +8,25 @@ public class ComparatorEx {
     public static void main(String[] args) {
         String[] strArr = {"cat", "Dog", "lion", "tiger"};
 
+        int[] intArr = {5, 34, 203, 72, 45};
+        String[] strarr2 = new String[intArr.length];
+        for (int i = 0; i < strarr2.length; i++) {
+            strarr2[i] = String.valueOf(intArr[i]); // 숫자를 문자열로 바꿈
+        }
+
+
+        System.out.println(Arrays.toString(strarr2));
+        Arrays.sort(strarr2, new Comparator<String>() {
+            @Override
+            public int compare(String a, String b) {
+                return (a+b).compareTo(b+a); //   [203, 34, 45, 5, 72]  b+a 형식 이 a+b 보다 크면 자리바꿈
+//                return (a+b).compareTo(a+b); // [5, 34, 203, 72, 45] 그대로
+//                return (b+a).compareTo(a+b);  // b+a 형식 이 a+b 보다 크면 자리바꿈 [72, 5, 45, 34, 203]
+                //오름차순 정렬로 할거면 (o1+o2).compareTo(o1+o2);
+            }
+        });
+        System.out.println(Arrays.toString(strarr2));
+
         Arrays.sort(strArr); // String의 Comparable구현에 의한 정렬  sclass String implements java.io.Serializable, Comparable<String>, ....
         // 여기서 String은 Comparable<String>를 구현한 것으로, 기본 compareTo 메소드가 String에 구현되어 있어서 sort시 기본적인 정렬기준으로 별도지정 없어도 실행가능
         System.out.println("strArr=" + Arrays.toString(strArr));
@@ -35,6 +54,14 @@ public class ComparatorEx {
         System.out.println(Arrays.toString(arr));
     }
 }
+
+class cending implements Comparator {
+    @Override
+    public int compare(Object o1, Object o2) { // o1 과 o2 비교
+        return 0;
+    }
+}
+
 
 class Descending implements Comparator {
     @Override
