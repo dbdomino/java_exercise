@@ -1,5 +1,6 @@
 기본적으로 String, Integer, Float, Double 같은 것들은
 Comparable 을 구현하도록 인터페이스 연결이 되어있다.
+핵심, 기본 정렬기준을 구현하는데 사용, -1 0 1
 
 이는 compareTo Method가 String, Integer, Float, Double에 구현되어 있다는 소리며,
 String Integer Float Double 클래스에 들어가보면 compareTo 메소드를 확인할 수 있다.
