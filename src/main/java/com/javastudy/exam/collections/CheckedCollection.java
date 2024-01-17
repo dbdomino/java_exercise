@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-// 한종류의 객체만 저장하기
+// 한가지 타입의 객체만 저장하기
 public class CheckedCollection {
     static List l = new ArrayList<String>(24);
     static List cl = Collections.checkedList(l, String.class); // 스트링 형식의 list만 받겠다는소리
