@@ -1,0 +1,53 @@
+제네릭 타입과 원시 타입 간의 형변환은 바람직 하지 않다.(경고 발생)
+Box<Object> objBox = null;
+Box box = (Box)objBox;      // OK, 제네릭 타입 -> 원시타입
+objBox = (Box<Object>)box;  // OK, 원시타입 -> 제네릭 타입
+
+그러나
+objBox = (Box<Object>)strBox;  // 에러, Box<String> -> Box<Object>는 변환 안됨
+strBox = (Box<String>)objBox;  // 에러, Box<Object> -> Box<String>은 변환 안됨.
+//         Box<String> d = new Box<Object>(); //안됨
+//         Box<String> e = (Box<String>)new Box<Object>(); //형변환 해도 안됨
+
+GenericTransform  에서 예시
+
+- 와일드 카드가 사용된 제네릭 타입으로는
+형변환 가능 ,위에처럼 형변환은 안되나  (Box<String>)new Box<Object>();
+이렇게는 형변환 가능                 (Box<? extends Object>)new Box<String>();  // 가능
+Box<Object> objBox = (Box<Object>)new Box(String();
+Box<? extends Object> wBox = (Box<? extends Object>)new Box<String>();  // 가능
+Box<? extends Object> wBox = new Box<String>();
+
+제네릭 타입을 빼더라도, 필효한 곳에는 형변환을 넣어줘야 에러가 안난다.
+class Box<T extends Fruit> {
+    void add (T t) {
+        ...
+    }
+    T get(int i ) {
+        return list.get(i);
+        // return (Fruit)list.get(i); 이런식으로 컴파일러가 형변환을 대신해주나
+    }
+    Static Juice makeJuice(FruitBox<? extends Fruit> box) {
+        String tmp = "";
+        for(Fruit f : box.getList() )
+            tmp += f + " ";  // fruit자손을 tmp에 합침 toString
+        return new Juice(tmp);
+    }
+}
+이는 이런식으로 제네릭 타입 제거 후, 타입을 일치시키기 위해, 형변환을 넣어줘야 한다.
+class Box {
+    void main (Fruit t) {
+        ...
+    }
+    Fruit get(int i ) {
+        return (Fruit)list.get(i);  // 수동으로 넣어주던지 해야한다. 필요하다면
+    }
+    Static Juice makeJuice(FruitBox box) {
+            String tmp = "";
+            Iterator it = box.getList().iterator();
+            while(it.hasNext()) {
+                tmp += (Fruit)it.next + " "; // it가 Fruit 형식으로 합쳐지도록 선언 수동으로 해줘야 함.
+            }
+            return new Juice(tmp);
+        }
+}
