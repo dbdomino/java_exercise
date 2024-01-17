@@ -1,0 +1,49 @@
+
+와일드 카드 <?>
+하나의 참조 변수로 대입된 타입이 다른 객체를 참조 가능
+ArrayList<Product> list = new ArrayList<Tv>(); // Tv가 Puoduct를 상속받은게 아니라면 에러남.
+ArrayList<? extends Product> listt = new ArrayList<Tv>();
+와일드 카드를 씀으로써 불일치 하더라도 사용 가능하게 해줌.
+<? extends T>      와일드카드의 상한 제한. T와 그 자손들만 가능
+<? super T>        와일드 카드의 하한 제한. T와 그 조상들만 가능
+<?>                제한 없음. 모든 타입이 가능.
+
+제네릭이 등장했지만 오히려 실용성이 떨어지는 상황들이 생기면서, 모든 타입을 대신할 수 있는 와일드카드 타입(<?>)을 추가되었습니다.
+와일드카드는 정해지지 않은 unknown type이기 때문에 Collection<?>로 선언함으로써 모든 타입에 대해 호출이 가능해졌습니다.
+그래서 제네릭의 활용성을 높일 수 있게 되었는데, 여기서 중요한 것은 와일드카드가 any type이 아닌 unknown type이라는 점.
+출처: https://mangkyu.tistory.com/241 [MangKyu's Diary:티스토리]
+void printCollection(Collection<?> c) { // 어떤 타입의 컬렉션이든 받아와 사용가능
+    for (Object e : c) {
+        System.out.println(e);
+    }
+}
+와일드카드로 선언된 타입은 unknown type이기 때문에 다음과 같은 경우에 문제가 발생하였다.
+@Test
+void genericTest() {
+    Collection<?> c = new ArrayList<String>();
+    c.add(new Object()); // 컴파일 에러
+}
+컬렉션의 add로 값을 추가하려면 제네릭 타입인 E 또는 E의 자식을 넣어줘야 한다.
+그런데 와일드카드는 unknown type이므로 Integer, String 또는 개발자가 추가한 클래스까지 될 수 있기 때문에 범위가 무제한이다.
+와일드카드의 경우 add로 넘겨주는 파라미터가 unknown 타입의 자식이여야 하는데, 정해지지 않았으므로
+어떠한 타입을 대표하는지 알 수 없어서 자식 여부를 검사할 수 없는 것이다.
+
+반면에 get으로 값을 꺼내는 작업은 와일드카드로 선언되어 있어도 문제가 없다.
+왜냐하면 값을 꺼낸 결과가 unknown 타입이여도 우리는 해당 타입이 어떤 타입의 자식인지 확인이 필요하지 않으며,
+심지어 적어도 Object의 타입임을 보장할 수 있기 때문이다.
+결국 이러한 상황이 생기는 것은 결국 와일드카드가 any 타입이 아닌 unknown 타입이기 때문이다.
+add보단 get에서 필요한 경우 와일드 카드를 쓰는게 좋다.
+
+그렇다면 도대체 언제 와일드카드에 super를 사용해야 하고, 언제 extends를 사용해야 하는지 헷갈릴 수 있다.
+그래서 이펙티브 자바에서는 PECS라는 공식을 만들었는데, 이는 Producer-Extends, Consumer-Super의 줄임말이다.
+즉, 컬렉션으로부터 와일드카드 타입의 객체를 생성 및 만들면(produce) extends를,
+갖고 있는 객체를 컬렉션에 사용 또는 소비(consumer)하면 super를 사용하라는 것이다.
+void printCollection(Collection<? extends MyParent> c) {
+    for (MyParent e : c) {
+        System.out.println(e);
+    }
+}
+
+void addElement(Collection<? super MyParent> c) {
+    c.add(new MyParent()); // 부모타입 인스턴스 c에 넣기 가능함
+}
