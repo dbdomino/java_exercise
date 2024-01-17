@@ -1,0 +1,22 @@
+enum 열거형
+
+관련된 상수들을 간단히 묶어 놓은 것, Java는 타입에 안전한 열거형을 제공
+enum은 상수로써 객체를 생성하여 불러오는 개념보단, static 개념으로 클래스에 선언후 클래스 이름으로 불러오는 것으로 보인다.
+enum을 쓰기 위해 해당 객체를 생성할 필요가 없어보임.
+
+열거형의 조상 - java.lang.Enum
+모든 열거형은 Enum의 자손이며, 아래의 메서드를 상속받는다.
+
+Class<E> getDeclaringClass()        열거형의 Class객체를 반환
+String name()                       열거형 상수의 이름을 문자열로 반환
+int ordinal()                       열거형 상수가 정의된 순서를 반환(0부터 시작)
+T valueOf(Class<T> enumType, String name)   지정된 열거형에서 name과 일치하는 열거형 상수를 반환
+
+- values() 와 valueOf()는 컴파일러가 자동으로 추가
+static E[] values()  // enum 열거형의 자료 생성 후 인스턴스 변수로 배열에다가 넣어 삽입가능
+static E   valueOf(String name)
+
+enum객체.values() -> 열거형 상수를 배열로 반환
+enum객체.valueOf(String name) -> 열거형 상수를 하나 가져올 수 있다.
+
+
