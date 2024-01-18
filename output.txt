@@ -1,0 +1,5 @@
+#Properties Example
+#Thu Jan 18 23:15:42 KST 2024
+autosave=5
+language=\uD55C\uAE00
+time=tick

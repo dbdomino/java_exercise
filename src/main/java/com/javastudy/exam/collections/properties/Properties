@@ -1,0 +1,4 @@
+Properties 객체
+내부적으로 Hashtable을 사용하며, key와 value를 string으로 저장
+Hashtable = HashMap의 구버전
+애플리케이션의 환경설정에 관련된 속성을 저장하는데 사용되며, 파일로부터 편하게 값을 읽고 쓸 수 잇는 매서드를 제공한다.

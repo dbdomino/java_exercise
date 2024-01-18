@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>Properties Example</comment>
+<entry key="autosave">5</entry>
+<entry key="language">한글</entry>
+<entry key="time">tick</entry>
+</properties>
