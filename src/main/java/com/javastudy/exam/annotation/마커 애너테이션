@@ -1,0 +1,9 @@
+마커 애너테이션 Marker Annotation
+요소가 하나도 정의되지 않은 애너테이션
+@Target(ElementType.METHOD)
+@Retention(RetentionPolicy.SOURCE)
+public @interface Override {}      // 마커 에너테이션. 정의된 요소가 하나도 없음
+
+@Target(ElementType.METHOD)
+@Retention(RetentionPolicy.SOURCE)
+public @interface Test {}    // 마커 에너테이션. 정의된 요소가 하나도 없음

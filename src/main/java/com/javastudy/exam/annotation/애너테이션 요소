@@ -1,0 +1,35 @@
+애녀테이션 요소의 규칙
+/**
+적용시 값을 지정하지 않으면 사용될 수 있는 기본값 지정 가능(default null은 안됨)
+요소가 하나이고 이름이 value일때는 요소의 이름 생략가능
+요소의 타입이 배열인 경우, 괄호{}를 사용해야 한다.
+요소의 타입은 기본형, String, enum, 애너테이션, Class(사용자 생성 클래스) 만 허용됨
+괄호() 안에 매개변수를 선언할 수 없다.
+예외를 선언할 수 없다.
+요소를 타입 매개변수로 정의할 수 없다.
+*/
+적용시 값을 지정하지 않으면 사용될 수 있는 기본값 지정 가능(default null은 안됨)
+
+@interface TestInfo {
+    int count() default 1;
+}
+
+@TestInfo // @TestInfo(count=1 과 동일)
+public class NewClass { ... }
+
+요소가 하나이고 이름이 value일때는 요소의 이름 생략가능
+@interface TestInfo {
+    String value();
+}
+
+@TestInfo("passed")
+class NewClass { ... }
+
+요소의 타입이 배열인 경우, 괄호{}를 사용해야 한다.
+@interface TestInfo {
+    String[] testTools();
+}
+
+@Test(TestTools={"aaa", "bbb"})
+@Test(TestTools="bbb") // 값이 하나일 경우 { } 안써도 된다.
+@Test(TestTools={}) // 값이 없을 때는 괄호{}가 반드시 필요하다.
