@@ -118,7 +118,9 @@ class Table {
 
     public int dishNum() { return dishNames.length; }
 }
-/* synchronized 대신 lock객체와 condition객체로 thread를 타겟팅해서 await을 주고 signal로 깨우는게 가능하다.
+//synchronized 대신 lock객체와 condition객체로 thread를 타겟팅해서 await을 주고 signal로 깨우는게 가능하다.
+// Table 클래스를 아래로 바꾸면 위의 synchronized소스를 사용한것과 다르게 동기화를 문제없이 제공가능한 것을 볼 수 있다.
+/*
 class Table {
     Lock lock = new ReentrantLock();
     Condition forCook = lock.newCondition();
