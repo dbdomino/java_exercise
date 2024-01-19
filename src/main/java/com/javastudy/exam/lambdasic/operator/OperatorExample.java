@@ -1,7 +1,7 @@
 package com.javastudy.exam.lambdasic.operator;
 
 import java.util.function.IntBinaryOperator;
-
+//매개값을 이용해서 연산을 수행한 후 동일한 타입으로 리턴값을 제공하는 역할
 public class OperatorExample {
 	private static int[] scores = { 92, 95, 87 };
 	
