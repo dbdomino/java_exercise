@@ -15,6 +15,7 @@ public class FunctionExample1 {
 		for(Student student : list) { // 매개변수로 받은 function(Function 구현체)을 외부의 list를 가지고 studunt를 function(Function 구현체)에 넣어 String형식으로 반환한 것을 출력함.
 			System.out.print(function.apply(student) + " "); // apply()는 function 함수형 인터페이스의 공통적인 실행메소드이며, 실제 수행은 구현부에 람다식으로 넣은 부분이 수행된다.
 		}
+
 		System.out.println();
 	}
 	
