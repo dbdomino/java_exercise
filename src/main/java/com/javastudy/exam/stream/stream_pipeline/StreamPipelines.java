@@ -18,16 +18,16 @@ public class StreamPipelines {
 //				.getAsDouble(); // double 형으로 받기
 
 
-//		double result = list.stream().filter(m -> m.getSex() == Member.MALE)
-//				.mapToInt(Member::getAge) // m->Member.getAge(m)
-//				.average() // 평균
-//				.getAsDouble(); // double 형으로 받기
-//
-//		System.out.println("남자 평균 나이: " + result);
-
-
 		double result = list.stream().filter(m -> m.getSex() == Member.MALE)
-				.mapToInt(Member::getAge); // m->Member.getAge(m)
+				.mapToInt(Member::getAge) // m->Member.getAge(m)
+				.average() // 평균
+				.getAsDouble(); // double 형으로 받기
+
+		System.out.println("남자 평균 나이: " + result);
+
+		// 에러, 종료 파이프라인 없으면 스트림 마무리 실패.
+//		double result = list.stream().filter(m -> m.getSex() == Member.MALE)
+//				.mapToInt(Member::getAge); // m->Member.getAge(m)
 
 	}
 }
