@@ -4,7 +4,6 @@ import java.io.FileOutputStream;
 import java.io.OutputStream;
 
 public class FileOutputStreamWriteEx1 {
-
 	public static void main(String[] args) throws Exception {
 		OutputStream os = new FileOutputStream("src/main/java/com/javastudy/exam/inputOutput/outputstream/Atest01.txt");
 		// ABC의 Bytes를 얻어옴.
