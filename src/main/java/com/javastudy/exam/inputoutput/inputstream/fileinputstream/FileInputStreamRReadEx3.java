@@ -4,7 +4,6 @@ import java.io.FileInputStream;
 import java.io.InputStream;
 
 public class FileInputStreamRReadEx3 {
-
 	public static void main(String[] args) throws Exception {
 		InputStream is = new FileInputStream("src/main/java/com/javastudy/exam/inputOutput/inputstream/Atest01.txt");
 		int readByteNo;
