@@ -9,13 +9,13 @@
 - 파일 또는 디렉토리 존재 유무 확인 메소드
   - > boolean isExist = file.exists();
 - 파일 및 디렉토리 생성 및 삭제 메소드
-  - boolean 으로 모두 반환함. 
-  - createNewFile() => 새로운 파일을 생성
-  - mkdir => 새로운 폴더 생성
-  - mkdirs => 경로상에 없는 모든 폴더 생성
-  - delete => 파일 또는 디렉토리 삭제
+  - boolean 반환. 
+    - createNewFile() => 새로운 파일을 생성
+    - mkdir => 새로운 폴더 생성
+    - mkdirs => 경로상에 없는 모든 폴더 생성
+    - delete => 파일 또는 디렉토리 삭제
 - 파일 및 디렉토리의 정보를 리턴하는 메소드
-  - boolean
+  - boolean 반환.
     - delete() => 파일 또는 디렉토리 삭제
     - canExecute() => 실행할 수 있는 파일인지 여부
     - canRead() => 읽을 수 있는 파일인지 여부
@@ -23,19 +23,19 @@
     - isFile() =>  파일인지 여부
     - isDirectory() => 디렉토리인지 여부
     - isHidden() => 숨김 파일인지 여부
-  - long
+  - long 반환.
     - lastModified() => 마지막 수정 날짜 및 시간을 리턴
     - length() => 파일의 크기 리턴
-  - String
+  - String 반환.
     - getName() => 파일의 이름을 리턴
     - getParent() => 부모 디렉토리를 리턴
     - getPath() =>  전체 경로를 리턴
-  - String[]
+  - String[] 반환.
     - list() =>  => 디렉토리에 포함된 파일 및 서브 디렉토리 목록 전부를 String 배열로 리턴
     - list(FilenameFilter filter) => 디렉토리에 포함된 파일 및 서브 디렉토리 목록 중에 FilenameFilter에 맞는 것만 String 배열로 리턴
-  - File
+  - File 반환.
     - getParentFile() => 부모 디렉토리를 File 객체로 생성 후 리턴
-  - File[]
+  - File[] 반환.
     - listFiles() => 디렉토리에 포함된 파일 및 서브 디렉토리 목록 전부를 File 배열로 리턴
     - listFiles(FilenameFilter filter) => 디렉토리에 포함된 파일 및 서브 디렉토리 목록 중에 FilenameFilter에 맞는 것만 File 배열로 리턴
 ### Files 클래스
