@@ -37,6 +37,5 @@ public class FileReaderEx02 {
         System.out.println(sb.toString());
 
         reader.close();
-
     }
 }

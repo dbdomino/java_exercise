@@ -15,6 +15,5 @@ public class FileReaderEx01 {
 
         reader.close();
 
-
     }
 }

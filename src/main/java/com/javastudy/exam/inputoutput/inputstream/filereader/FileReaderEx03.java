@@ -20,6 +20,5 @@ public class FileReaderEx03 {
         System.out.println(readCharNo);
 
         reader.close();
-
     }
 }
