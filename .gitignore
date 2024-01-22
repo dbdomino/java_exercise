@@ -234,6 +234,8 @@ buildNumber.properties
 .gradletasknamecache
 **/build/
 !src/**/build/
+.gradle/*.lock
+.gradle/*.bin
 
 ### Compliled files
 /target/
