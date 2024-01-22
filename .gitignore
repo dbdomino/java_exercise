@@ -234,8 +234,8 @@ buildNumber.properties
 .gradletasknamecache
 **/build/
 !src/**/build/
-.gradle/*.lock
-.gradle/*.bin
+.gradle/**/*.lock
+.gradle/**/*.bin
 *.lock
 *.bin
 
