@@ -236,6 +236,8 @@ buildNumber.properties
 !src/**/build/
 .gradle/*.lock
 .gradle/*.bin
+*.lock
+*.bin
 
 ### Compliled files
 /target/
