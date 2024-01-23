@@ -31,7 +31,7 @@
     - getParent() => 부모 디렉토리를 리턴
     - getPath() =>  전체 경로를 리턴
   - String[] 반환.
-    - list() =>  => 디렉토리에 포함된 파일 및 서브 디렉토리 목록 전부를 String 배열로 리턴
+    - list() => 디렉토리에 포함된 파일 및 서브 디렉토리 목록 전부를 String 배열로 리턴
     - list(FilenameFilter filter) => 디렉토리에 포함된 파일 및 서브 디렉토리 목록 중에 FilenameFilter에 맞는 것만 String 배열로 리턴
   - File 반환.
     - getParentFile() => 부모 디렉토리를 File 객체로 생성 후 리턴
@@ -62,3 +62,77 @@
   Path path = Paths.get("./dir/file.txt");
   ```
 - Files 클래스 예제 832
+
+### FileInputStream
+- 파일로부터 바이트 단위로 읽어들일 때 사용
+  - 그림, 오디오, 비디오, 텍스트 파일 등 모든 종류를 읽어들일 수 있다.
+- 객체 생성방법
+  ```
+  // 첫번째 방법
+  FileInputStream fis = new FileInputStream("C:/Temp/image.png");
+  
+  // 두번째 방법
+  File file = new File("C:/Temp/image.png");  
+  FileInputStream fis = new FileInputStream(file);
+  ```
+  - FileInputStream 객체가 생성될 때 new FileInputStream(file); 처럼 파일객체를 넣어 파일과 연결
+  - 만약 파일이 존재하지 않으면 FileNotFoundException 을 발생
+  - try-catch문으로 예외 처리 해야함.
+- InputStream 하위 클래스이므로 사용방법이 InputStream과 동일
+
+### FileOutputStream
+- 파일에 바이트 단위로 데이터를 저장할 때 사용
+  - 그림, 오디오, 비디오, 텍스트등 모든 종류의 데이터를 파일로 저장할 수 있다.
+- 객체 생성 방법
+  ```
+  // 첫번째 방법
+  FileOutputStream fos = new FileOutputStream("C:/Temp/image.png");
+  
+  // 두번째 방법
+  File file = new File("C:/Temp/image.png");  
+  FileOutputStream fos = new FileOutputStream(file);
+  ```
+  - 파일이 이미 존재할 경우, 데이터를 출력하게 되면 파일을 덮어쓰게 됨.
+  - 기존 파일 내용 끝에 데이터를 추가하려면(데이터를 추가하며 작성, append) 아래 예시처럼 하면 된다. 
+  ```
+  FileOutputStream fos = new FileOupputStream("C:/Temp/data.txt", true);
+  FileOutputStream fos = new FileOupputStream(file, true); 
+  ```
+- OutputStream 하위 클래스이므로 사용 방법이 OutputStream과 동일하다.
+
+### FileReader
+- 텍스트 파일로부터 데이터를 읽어 들일 때 사용
+  - 문자 단위로 읽기 때문에 텍스트가 아닌 그림, 오디오, 비디오 등의 파일은 읽을 수 없다.
+- 객체 생성 방법
+  ```
+  // 첫번째 방법
+  FileReader fr = new FileReader("C:/Temp/file.txt");
+  
+  // 두번째 방법
+  File file = new File("C:/Temp/file.txt");
+  FileReader fr = new FileReader(file);
+  ```
+  - FileReader 객체가 생성될 때 파일과 직접 연결
+  - 만약 파일이 존재하지 않으면 FileNotFoundException을 발생
+  - Try-catch문으로 예외 처리를 해야 한다.
+- Reader 하위 클래스이므로 사용 방법이 Reader와 동일
+
+### FileWriter
+- 텍스트 파일에 문자 데이터를 저장할 때 사용
+  - 텍스트가 아닌 그림, 오디오, 비디오 등의 데이터를 파일로 저장할 수 없다.
+- 객체 생성 방법
+  ```
+  // 첫번째 방법
+  FileWriter fw = new FileWriter("C:/Temp/file.txt");
+  
+  // 두번째 방법
+  File file = new File("C:/Temp/file.txt");
+  FileWriter fw = new FileWriter(file);
+  ```
+  - 파일이 이미 존재할 경우, 데이터를 출력하게 되면 파일을 덮어쓰게 됨.
+  - 기존 파일 내용 끝에 데이터를 추가하려면 아래처럼 하면 된다. (이어 붙이기, append)
+  ```
+  FileWriter fw = new FileWriter("C:/Temp/file.txt", true);
+  FileWriter fw = new FileWriter(file);
+  ```
+- Writer 하위 클래스이므로 사용 방법이 Writer 와 동일
