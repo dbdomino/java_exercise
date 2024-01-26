@@ -16,3 +16,9 @@ boolean retainAll(Collection c) 지정된 Collection에 포함된 객체만을 �
 int size()                      Collection에 저장된 객체의 개수를 반환한다.
 Object[] toArray()              Collection에 저장된 객체를 객체배열(Object[])로 반환한다.
 Object[] toArray(Object[] a)    지정된 배열에 Collection의 객체를 저장해서 반환한다.
+
+tream.toArray()로 Stream을 배열로 변환
+Stream.toArray(Type[]::new)는 Stream을 Type 형식 배열로 변환합니다
+Stream.toArray(Integer[]::new) 는 Stream을 Integer 형식으로 변환합니다.
+Stream.toArray(Long[]::new) 는 Stream을 Long 형식으로 변환합니다.
+참조 블로그 : https://codechacha.com/ko/java8-convert-stream-to-array/
