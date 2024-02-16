@@ -13,7 +13,7 @@ public class QueueEx3 { // 자바에서 큐 직접 구현하기
         int n = Integer.parseInt(br.readLine());
         StringTokenizer st;
 //        Queue queue = new LinkedList(); // 마지막 값 가져오는데 기능이 한계가있음
-        Deque queue = new LinkedList(); // 마지막 값 가져오기 위해 사용
+        Deque queue = new LinkedList(); // 마지막 값 가져오기 위해 사용, 스택과 큐의 기능을 동시에가진 큐, 조심해서 써야한다.
 
         StringBuffer sb = new StringBuffer();
         for (int i=0;i<n;i++){
