@@ -1,5 +1,7 @@
 package com.javastudy.exam.enums;
 
+import java.util.Arrays;
+
 //               0       1     2      3
 enum Direction { EAST, SOUTH, WEST, NORTH }
 public class EnumSample {
@@ -7,6 +9,9 @@ public class EnumSample {
         Direction2 d1 = Direction2.EAST;  // 열거형타입.상수이름.
         Direction2 d2 = Direction2.valueOf("WEST");
         Direction2 d3 = Enum.valueOf(Direction2.class, "EAST");
+
+        System.out.println(Direction2.values()); // enum 객체로 ArrayList 반환
+        System.out.println(Arrays.toString(Direction2.values())); // string으로 바꿔서 반환
 
         System.out.println("d1="+d1);
         System.out.println("d2="+d2);
