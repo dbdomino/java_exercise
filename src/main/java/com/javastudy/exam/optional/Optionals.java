@@ -5,17 +5,21 @@ import java.util.Optional;
 public class Optionals {
     public static void main(String[] args) {
         String str = "abcd efgh"; // null이 아닌 값을 가지는 문자열 변수
+        String nullStr = null;
         Optional<String> optional = Optional.of(str); // Optional 객체 생성, 값이 null이 아니므로 of() 메서드 사용
+//        Optional<String> optionalOf = Optional.of(nullStr); // of로 생성할 때 null이 드러가면 NullPointerException 생성
         System.out.println(optional); // 출력: Optional[abcd efgh]
         System.out.println(optional.toString()); // 출력: Optional[abcd efgh]
         System.out.println(optional.get()); // 출력: abcd efgh
+
         System.out.println("-----------------------------");
-        String nullStr = null; // null 값을 가지는 문자열 -> empty로 출력
-        Optional<String> optionalNull = Optional.ofNullable(nullStr); // Optional 객체 생성, 값이 null이므로 ofNullable() 메서드 사용
-        System.out.println(optionalNull); // 출력: Optional.empty
-        System.out.println(optionalNull.toString()); // 출력: Optional.empty
+         // null 값을 가지는 문자열 -> empty로 출력
+        Optional<String> optionalofNullable1 = Optional.ofNullable(str); // Optional 객체 생성, 값이 null이므로 ofNullable() 메서드 사용
+        Optional<String> optionalofNullable2 = Optional.ofNullable(nullStr); // ofNullable 로 생성하면 null 들어가도 에러 안뱉음.
+        System.out.println(optionalofNullable2); // 출력: Optional.empty
+        System.out.println(optionalofNullable2.toString()); // 출력: Optional.empty
 //        System.out.println(optionalNull.get()); // 에러, null은 get 시키지 못한다.
-        System.out.println(optionalNull.orElse("optionalNull orElse")); // empty나
+        System.out.println(optionalofNullable2.orElse("optionalNull orElse")); // empty나
         System.out.println("-----------------------------");
         Optional<String> optionalEmpty = Optional.empty(); // null 이 들어간 Optional
         System.out.println(optionalEmpty); // 출력: Optional.empty
