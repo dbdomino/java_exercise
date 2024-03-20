@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 // 익명클래스
 // 이름이 없는 일회용 클래스, 정의와 생성을 동시에 한다.
 // 이름이 없으니, 조상 클래스 이름을 쓰거나, 구현인터페이스 이름을 쓴다.
+// 조상클래스 이름이나, 인터페이스 이름이 반드시 필요하다.
 class anonyClass {
     Object iv = new Object(){ void method(){} };         // 익명 클래스
     static Object cv = new Object(){ void method(){} };  // 익명 클래스
