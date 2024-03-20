@@ -9,6 +9,7 @@ package com.javastudy.exam.thread;
 '임계 영역'은 락(lock)을 얻은 단 하나의 스레드만 출입가능(객체 1개에 락 1개, 객체 하나가 락을 가지고 있으면 다른객체는 락을 풀지못함.)
  */
 // 구체적으로 synchronized를 이용해서 동기화 한다.
+// 이건 하나의 프로세스에서 동시성 문제 해결 가능.
 
 public class ThreadSynchronization {
     public static void main(String args[]) {
