@@ -4,10 +4,8 @@ ConcurrentHashMap 동기화 문제를 해결하기 위해 사용하는 map
 
     Hashtable
 
-
     HashMap (맵은 key 순서보장X)
         LinkedHashMap(key 순서보장 O)
-
 
     SortedMap
         TreeMap
